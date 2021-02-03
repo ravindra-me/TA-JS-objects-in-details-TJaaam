@@ -8,8 +8,9 @@
 //             return this.noOfProjects;
 //         },
 //         changeName : function (newName) {
+            //    let preName = this.name
 //             this.name = newName
-//             return this.name
+//             return preName;
 //         },
 //         incrementProject: function (number = 1) {
 //             this.noOfProjects+= number;
@@ -30,8 +31,9 @@
 //         return this.noOfProjects;
 //     },
 //     changeName: function (newName) {
+//         let preName = this.name
 //         this.name = newName
-//         return this.name
+//         return preName
 //     },
 //     incrementProject: function (number = 1) {
 //         this.noOfProjects+= number;
@@ -66,8 +68,9 @@
 //         return this.noOfProjects;
 //     },
 //     changeName: function (newName) {
+//         let preName = this.name
 //         this.name = newName
-//         return this.name
+//         return preName;
 //     },
 //     incrementProject: function (number = 1) {
 //         this.noOfProjects+= number;
@@ -93,8 +96,9 @@ class CreateObj {
         return this.noOfProjects;
     }
     changeName(newName) {
+        let preName = this.name;
         this.name = newName
-        return this.name
+        return preName;
     }
     incrementProject(number = 1) {
         this.noOfProjects+= number;
