@@ -216,18 +216,19 @@ class User {
 
     set fullName(str) {
         if(str.length <= 5){
-            return "Full name should be more than 5 characters"
-        } 
-        this.firstName = str.split(" ")[0];
-        this.lastName = str.split(" ")[1];
+            alert( "Full name should be more than 5 characters")
+        }else {
+            this.firstName = str.split(" ")[0];
+            this.lastName = str.split(" ")[1];
+        }
     };
 
     get fullName() {
         return `${this.firstName} ${this.lastName}`;
     };
-    // nameContains(str) {
-
-    // }
+     nameContains(str) {
+         return `${this.firstName} ${this.lastName}`.includes(str);
+    }
 }
 
 
@@ -238,7 +239,7 @@ let user1 = new User("Ravindra" , "Rajpoot");
 let user2 = new User("Anikt", "Kumar");
 
 // - Check by using the `fullName` setter method with name bigger than 5 characters.
-user1.fullName = "Ramkumar";
+user1.fullName = "Ramkumar Singh";
 
 // - Check by using the `fullName` setter method with name less than 5 characters.
 console.log(user1.fullName = "ravi");
