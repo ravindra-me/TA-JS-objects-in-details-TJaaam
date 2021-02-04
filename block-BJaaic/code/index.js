@@ -70,8 +70,11 @@ let dogMethods = {
     }
 }
 
-function dog(name, color) {
-    let dogObj = Object.create(dogMethods);
+function dog(name, color,location, numberOfLegs) {
+    let dogObj = animal(location, numberOfLegs);
+    console.log(dogObj) // Why bark is coming I didn't assign till as prototype of dogObj
+    Object.setPrototypeOf(dogObj, dogMethods);
+    console.log(dogObj);
     dogObj.name = name;
     dogObj.color = color;
     return dogObj;
@@ -79,11 +82,11 @@ function dog(name, color) {
 
 Object.setPrototypeOf(dogMethods, animalMethods);
 let animal1 = animal("Himachal" , 4);
-let dog1 = dog("pochi", "black");
+let dog1 = dog("pochi", "black", "Delhi" , 3);
 
 // #### Cat
 
-// It will have all the properties and methods of the Animal. These are the extra properties and methods these cats will have.
+// It will have all the properties and methods of the Animal. These are the extra properties and methods these dogs will have.
 
 // Properties:
 
@@ -115,11 +118,15 @@ let catMethods = {
     }
 }
 
-function cat(name, color) {
-    let catObj = Object.create(catMethods);
+function cat(name, color, location, numberOfLegs ) {
+    let catObj = animal(location, numberOfLegs);
+    Object.setPrototypeOf(catObj, catMethods);
     catObj.name = name;
     catObj.colorOfEyes = color;
     return catObj;
 }
 
 Object.setPrototypeOf(catMethods , animalMethods);
+
+
+let cat1 = cat("juhi", "red", "bareilly", 4);
