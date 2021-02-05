@@ -83,11 +83,10 @@ var simon = new PersonConstructor();
 
 function PersonFromConstructor(name, age) {
   // add code here
-  this.greet = function () {
-    console.log("hello");
-  }
-  this.name = name;
-  this.age = age;
+  let obj  = new PersonConstructor();
+  obj.name = name;
+  obj.age = age;
+  return obj;
 }
 
 var mike = new PersonFromConstructor('Mike', 30);
@@ -166,16 +165,14 @@ function userFactory(name, score) {
   return user;
 }
 
-var adminFunctionStore = {};
+var adminFunctionStore = Object.create(userFunctionStore);
 
 function adminFactory(name="ravi", score=0) {
   let adminObj = userFactory(name, score);
-  Object.setPrototypeOf(adminObj, adminFunctionStore);
   adminObj.type = "Adim";
-  console.log(adminObj);
+  Object.setPrototypeOf(adminObj, adminFunctionStore);
   return adminObj;
 }
-Object.setPrototypeOf(adminFunctionStore,userFunctionStore);
 
 
 
