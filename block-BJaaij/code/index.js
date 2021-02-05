@@ -1,10 +1,10 @@
 class Book {
-    constructor(title, category, author, isRead=false, finishedDate) {
+    constructor(title, category, author) {
         this.title = title;
         this.category = category;
         this.author = author;
-        this.isRead = isRead;
-        this.finishedDate = finishedDate;
+        this.isRead = false;
+        this.finishedDate = null;
     }
     markBookAsRead() {
         this.isRead = !this.isRead
@@ -13,26 +13,33 @@ class Book {
 }
 
 class BookList{
-    constructor(arr, index) {
-        this.arr = arr;
-        this.index = index;
+    constructor() {
+        this.arr = [];
+        this.index = 0;
     }
-    add(arr) {
-        this.arr.push(arr);
+    add(arr=[]) {
+       this.arr = this.arr.concat(arr);
+       return this.arr;
     };
     getCurrentBook() {
        return  this.arr[this.index];
     };
     getNextBook() {
-        return this.arr[this.index +1];
+        this.index = this.index + 1;
+        return this.index;
     }
     getPrevBook(){
-        return this.arr[this.index - 1];
+        this.index = this.arr[this.index - 1];
+        return this.index;
     };
     changeCurrentBook(newIndex) {
         this.index = newIndex;
+        return this.index;
     }
 }
 
-let book1 = new Book("think and grow" , "rav" , "ravindra" , false, new Date());
-let bookList1 = new BookList(["a" , "b", "c"], 0);
+let book1 = new Book("think and grow" , "rav" , "ravindra" );
+let book2 = new Book("think" , "ravindra" , "raju" , false);
+
+let bookList1 = new BookList();
+bookList1.add([book1, book2]);
