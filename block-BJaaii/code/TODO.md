@@ -30,6 +30,36 @@ Getter
 #### Test
 
 ```js
+class Stack{
+    constructor() {
+        this.stack = [];
+    }
+    push(num) {
+        this.stack.push(num);
+        return this.stack
+    };
+    pop() {
+        this.stack.pop();
+        return this.stack
+    };
+    peek(index=this.stack.length-1){
+        return this.stack[index];
+    };
+    reverse(){
+       const reverseArr =  this.stack.reverse();
+       return reverseArr;
+    };
+    isEmpty(){
+       return  this.stack.length < 1 ? true : false;
+    };
+    displayStack(){
+        return this.stack.join(' ')
+    };
+get length(){
+     return this.stack.length;
+    }
+}
+
 let myStack = new Stack();
 myStack.push('One');
 myStack.push('Two');
@@ -67,6 +97,32 @@ Getter
 #### Test
 
 ```js
+
+
+class Queue{
+    constructor() {
+        this.queue = [];
+    }
+    enqueue(num) {
+       this.queue.push(num);
+    };
+    dequeue() {
+        this.queue.shift();
+    };
+    peek(index=0){
+        return this.queue[index];
+    };
+    isEmpty(){
+       return  this.queue.length < 1 ? true : false;
+    };
+    displayQueue(){
+        return this.queue.join(' ')
+    };
+get length(){
+     return this.queue.length;
+    }
+}
+
 let atmQueue = new Queue();
 atmQueue.enqueue('Aman');
 atmQueue.enqueue('John');
