@@ -1,29 +1,28 @@
+
 class TodoList{
     constructor(root, list=[]){
         this.root = root;
         this.todos = JSON.parse(localStorage.getItem("todos")) || [];
-        this.createUi();
+        this.createUi()
     }
     add(title, tdAuthor, number){
-        this.todos.push({
-            title, tdAuthor, number
-        });
+        let todo = new Todo(title, tdAuthor, number);
+        this.todos.push(todo);
         this.createUi();
         localStorage.setItem("todos", JSON.stringify(this.todos));
     };
-    handelCheck(event){
-        let id = event.target.dataset.id;
-        let index = this.todos.findIndex((todo)=> todo.id === id);
-        this.todos.splice(index,1);
-        this.createUi(this.todos);
+    handelCheck(id){
+        this.todos = this.todos.filter((todo)=> todo.id !== id);
+        this.createUi();
         localStorage.setItem("todos", JSON.stringify(this.todos));
     };
     createUi(){
         this.root.innerHTML = "";
         this.todos.forEach(todo => {
-            let currentTodo  = new Todo(todo.title, todo.tdAuthor, todo.number );
-            const ui = currentTodo.createUi();
-            ui.querySelector(".delete").addEventListener("click", this.handelCheck.bind(this));
+            let ui  = Todo.prototype.createUi.call(todo);
+            ui.querySelector(".delete").addEventListener("click", (event) => {
+                this.handelCheck(event.target.dataset.id)
+            });
             this.root.append(ui);
         })
     };
@@ -67,5 +66,4 @@ form.addEventListener("submit", (event)=> {
    let number = document.querySelector(".number").value;
    todoList.add(title, author, number);
 })
-// todoList.createUi();
 
