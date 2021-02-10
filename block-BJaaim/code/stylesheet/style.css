@@ -94,6 +94,18 @@ body {
   cursor: pointer;
 }
 
+h1 {
+  font-size: 3rem;
+  font-weight: 600;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+p {
+  font-size: 1.25rem;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+}
+
 .change-question {
   margin: 2rem 0;
 }
@@ -138,6 +150,9 @@ h3 span {
 
 form input {
   margin-right: 1rem;
+  display: inline-block;
+  width: 2rem;
+  height: 1.2rem;
 }
 
 form label {
@@ -153,10 +168,21 @@ form button {
   padding: 0.8rem 2rem;
   background: lightsalmon;
   border: none;
+  outline: none;
+  -webkit-box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
 form button:hover {
   cursor: pointer;
+}
+
+.main-container {
+  border-radius: 2rem;
+  -webkit-box-shadow: 2px 5px 30px rgba(0, 0, 0, 0.2), 0px -10px 30px rgba(0, 0, 0, 0.2);
+          box-shadow: 2px 5px 30px rgba(0, 0, 0, 0.2), 0px -10px 30px rgba(0, 0, 0, 0.2);
+  padding: 1.5rem;
+  background-color: #f1d1d0;
 }
 
 .container {
@@ -164,8 +190,10 @@ form button:hover {
   width: 100%;
   margin: 0 auto;
   padding: 0 2rem;
-  border-radius: 2rem;
-  border: 2px solid lightcoral;
+}
+
+body {
+  background-color: #8cbbbb;
 }
 
 .text-center {

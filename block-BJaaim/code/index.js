@@ -62,7 +62,7 @@ class Quiz  {
             this.activeIndex +=1; 
            this.createUi(this.allQuestions[this.activeIndex]);
         }else{
-            alert(`game id over your score is ${this.score} out off ${this.allQuestions.length}`); 
+            alert(`game is over your score is ${this.score} out off ${this.allQuestions.length}`); 
         }
     }
     createUi() {
@@ -78,9 +78,6 @@ class Quiz  {
                     this.updateScore();
                 }
                 scorenum.innerText = this.score;
-                window.setTimeout(()=>{
-                    // this.nestQuestion()
-                },2000)
             }
         
 })};

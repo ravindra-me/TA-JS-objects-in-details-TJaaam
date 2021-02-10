@@ -11,6 +11,17 @@
         }
     }
 }
+h1{
+
+    font-size: 3rem;
+    font-weight: 600;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+p{
+    font-size: 1.25rem;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+}
 .change-question{
     margin: 2rem 0;
     p{
@@ -51,6 +62,9 @@ h3{
 form{
     input{
         margin-right: 1rem;
+        display: inline-block;
+        width: 2rem;
+        height: 1.2rem;
     }
     label{
         font-size: 1.25rem;
@@ -64,8 +78,16 @@ form{
         padding: 0.8rem 2rem;
         background: lightsalmon;
         border: none;
+        outline: none;
+        box-shadow: 2px 5px 5px rgba(black,0.2);
         &:hover{
             cursor: pointer;
         }
     }
+}
+.main-container{
+    border-radius: 2rem;
+    box-shadow: 2px 5px 30px rgba(black,0.2), 0px -10px 30px rgba(black,0.2);
+    padding: 1.5rem;
+    background-color:#f1d1d0 ;
 }
